@@ -1,0 +1,153 @@
+/* lab 2 styles */
+
+* {
+    box-sizing: border-box;
+}
+
+/* default text for the whole page */
+body {
+    margin: 0;
+    font-size: 18px;
+    color: #2D3748;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* grid layout - sidebar on the left, main on the right */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    min-height: 100vh;
+}
+
+header { grid-area: header; }
+aside  { grid-area: sidebar; }
+main   { grid-area: main; }
+footer { grid-area: footer; }
+
+/* header - flexbox to center everything */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3C8527;
+    color: #FFFFFF;
+    padding: 15px;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 39px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin: 10px 0 5px;
+}
+
+header p {
+    font-style: italic;
+    margin: 0;
+}
+
+/* sidebar */
+aside {
+    padding: 25px 15px;
+    border-right: 1px solid #E2E8F0;
+}
+
+aside section {
+    margin-bottom: 25px;
+}
+
+aside h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0 0 8px;
+}
+
+.about {
+    background-color: #E2E8F0;
+    padding: 10px;
+}
+
+.about h3 {
+    color: #333322;
+}
+
+.links {
+    border-left: 3px solid #28651C;
+    padding-left: 15px;
+}
+
+.links h3 {
+    color: #28651C;
+}
+
+/* no bullets */
+.links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links a {
+    color: #2879B8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* blog posts */
+main {
+    padding: 25px 30px;
+}
+
+/* flow-root stops the image from spilling into the next post */
+article {
+    display: flow-root;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+main h2 {
+    font-size: 34px;
+    color: #28651C;
+    margin: 0;
+}
+
+.meta {
+    color: #667267;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* floats so the text wraps around the pics */
+.float-right {
+    float: right;
+    width: 200px;
+    margin: 0 0 10px 15px;
+}
+
+.float-left {
+    float: left;
+    width: 200px;
+    margin: 0 15px 10px 0;
+}
+
+/* footer */
+footer {
+    background-color: #28651C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+}
